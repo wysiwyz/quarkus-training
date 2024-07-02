@@ -3,6 +3,16 @@ plugins {
     id 'io.quarkus'
 }
 
+// configuration of JVM setting of codegen processes and quarkus build
+quarkus {
+    buildForkOptions {
+        maxHeapSize = '2g'
+    }
+    codeGenForkOptions {
+        maxHeapSize = '128m'
+    }
+}
+
 repositories {
     mavenCentral()
     mavenLocal()
